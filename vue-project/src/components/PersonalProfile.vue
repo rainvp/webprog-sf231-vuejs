@@ -31,12 +31,11 @@
                 <a href="#facebook">Facebook</a>
                 <a href="#instagram">Instagram</a>
                 <a href="#twitter">Twitter</a>
-              </div>
             </div>
-          </div>
         </div>
     </div>
-      </nav>
+</div>
+</nav> 
   
       <!-- Banner Section -->
       <header id="banner">
