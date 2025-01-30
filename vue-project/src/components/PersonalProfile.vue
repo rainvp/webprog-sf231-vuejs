@@ -76,9 +76,6 @@
   </template>
 
 <script>
-export default {
-  name: "RainsCafe"
-};
 </script>
   
   <style>
