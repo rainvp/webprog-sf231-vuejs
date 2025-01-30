@@ -120,10 +120,6 @@
           </form>
         </section>
       </div>
-  
-      <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-      <script src="js/menu.js"></script>
-      <script src="js/gallery-vue.js"></script>
     </div>
   </template>
   
