@@ -64,6 +64,7 @@
     my journey in web design and development</p>
 
  </div>
+</div>
  
  <!-- About ME Container -->
 <div class="w3-container" id="about">
