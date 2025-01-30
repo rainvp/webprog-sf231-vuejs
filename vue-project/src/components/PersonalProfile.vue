@@ -35,68 +35,41 @@
           </div>
         </div>
       </nav>
-
-<!-- Banner Section -->
-<header id="banner">
-  <div id="banner-content" class="row clearfix">
-      <div class="col-38">
-          <div class="section-heading">
-              <h1>Rain's Digital Café</h1>
-          </div>
-          <a href="#" class="button">GET TO KNOW ME!</a>
-      </div>
-  </div><!--End of Row-->
-</header>
+      
+      <header id="banner">
+        <div id="banner-content">
+          <h1>Rain's Digital Café</h1>
+          <a href="#about" class="button custom-bg">GET TO KNOW ME!</a>
+        </div>
+      </header>
   
-<!-- About The PAGE Container -->
-<div class="w3-container" id="about">
-  <div class="w3-content" style="max-width: 1000px">
-    <h5 class="tag">ABOUT THE CAFE </h5>
+      <section id="about" class="about-section">
+        <h2>About Me</h2>
+        <p>Welcome to my digital café! I'm Rain, a passionate web developer and coffee enthusiast. This space is where I share my journey, experiences, and projects.</p>
+      </section>
   
-    <p>Welcome to my personal profile webpage!</p>
-    <p>This is my very first step into the world of web development. 
-    I created this page to explore and learn the basics of building a website 
-    while expressing my style through a cozy café-inspired theme. 
-    It’s a small but meaningful project that represents the beginning of 
-    my journey in web design and development</p>
-
- </div>
-</div>
- 
- <!-- About ME Container -->
-<div class="w3-container" id="about">
-  <div class="w3-content" style="max-width: 1000px">
-    <h5 class="tag">ABOUT THE OWNER </h5>
-  </div>   
-    <div class="w3-panel w3-leftbar w3-light-beige">
-      <p><i>"The sun will rise and we will try again" *quote creds/smthn short i will say abt it*.</i></p>
-      <p>Chef, Coffeeist and Owner: Rain Cel-Anne Sophia V. Presa</p> 
+      <section id="about-page" class="about-section">
+        <h2>About the Page</h2>
+        <p>This website is designed to showcase my skills in web development while embracing a cozy café aesthetic. Enjoy browsing through my work!</p>
+      </section>
     </div>
-</div>  
   </template>
-
-<script>
-export default {
-  name: "RainsCafe"
-};
-</script>
   
   <style scoped>
-body, html {
-    height: 100%;
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    color: #4a3b2b;
-    background-color: #f8f5f0;
-}
-
- .bgimg {
-    background-position: center;
-    background-size: cover;
-    background-image: url("https://github.com/rainvp/Personal-Profile-Webpage/blob/main/images/472690451_953965212896626_182944049874713246_n.jpg?raw=true");
-    min-height: 75%;
-}
+  body, html {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      color: #4a3b2b;
+      background-color: #f8f5f0;
+  }
   
+  .bgimg {
+      background-position: center;
+      background-size: cover;
+      background-image: url("https://raw.githubusercontent.com/rainvp/Personal-Profile-Webpage/main/images/472690451_953965212896626_182944049874713246_n.jpg");
+      min-height: 75%;
+  }
   
   a {
       text-decoration: none;
@@ -104,274 +77,92 @@ body, html {
       transition: color 0.3s;
   }
   
-  /* ---------------------------- Custom Styles ----------------------------*/
   .button.custom-bg {
-    background-color: #f7e7d1; 
-    color: #551f18; 
-}
+      background-color: #f7e7d1;
+      color: #551f18;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+  }
   
   .button.custom-bg:hover {
-    background-color: #795548 !important;
-    color: #ffffff !important; 
+      background-color: #795548 !important;
+      color: #ffffff !important;
   }
-
+  
   .tag {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    margin: 40px; /* Spacing above and below the tag */
-    font-size: 1.5rem; /* Adjust text size */
-    font-weight: bold;
-    color: #4a3b2b; /* Coffee-inspired color */
-    text-transform: uppercase; /* Make the text all caps */
-    letter-spacing: 2px; /* Add some spacing between letters */
-    position: relative; /* For positioning the lines */
-}
-
-.tag::before {
-    content: "";
-    flex: 1; 
-    height: 3px; 
-    background: linear-gradient(to right, #d4b59b, #502917);
-    margin: 0 15px;
-}
-.tag::after {
-    content: "";
-    flex: 1; 
-    height: 3px; 
-    background: linear-gradient(to left, #d4b59b, #502917); /* Gradient effect */
-    margin: 0 15px;
-}
-/* ------------------------------------ Navigation Bar -----------------------------*/ 
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #f7e7d1; 
-    color: #4a3b2b;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px;
-    z-index: 1000;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
-}
-
-.navbar .logo img {
-    height: 65px; /* Adjust the height of the logo */
-    width: auto; /* Maintain aspect ratio */
-    display: block; /* Ensure proper spacing around the image */
-}
-
-
-.navbar a {
-    color: #4a3b2b; 
-    font-size: 20px;
-    text-decoration: none; 
-    padding: 10px 25px; 
-    transition: background-color 0.3s ease, color 0.3s ease; 
-}
-
-.navbar a:hover {
-    background-color: #d4b59b; 
-    color: #fff; 
-    border-radius: 5px;
-}
-/* -------------------------------------------------- Dropdown styling -------------------------------------------- */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropbtn {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    color: #4a3b2b;
-    padding: 10px 15px;
-    transition: color 0.3s ease;
-}
-
-.dropbtn:hover {
-    color: #d4b59b;
-}
-
-/* Dropdown icon */
-.dropdown-icon {
-    font-size: 16px;
-    margin-left: 5px;
-    transition: transform 0.3s ease; /* Animation for rotation */
-}
-
-/* Dropdown content */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    right: 0; /* Align dropdown below the icon */
-    background-color: #fff;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    min-width: 250px;
-    border-radius: 5px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px); /* Start with a slight downward position */
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; /* Smooth fade-in and slide-up */
-}
-
-/* Dropdown sections */
-.dropdown-section {
-    padding: 15px;
-    border-bottom: 1px solid #f7e7d1;
-}
-
-.dropdown-title {
-    font-size: 16px;
-    font-weight: bold;
-    color: #4a3b2b;
-    margin-bottom: 10px;
-    text-transform: uppercase; /* Optional: Make titles uppercase for a neat look */
-}
-
-/* Dropdown items */
-.dropdown-content a {
-    color: #4a3b2b;
-    padding: 8px 15px;
-    text-decoration: none;
-    display: block;
-    transition: background-color 0.3s ease;
-}
-
-.dropdown-content a:hover {
-    background-color: #f7e7d1;
-}
-
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0); /* Slide to the original position */
-}
-
-/* Rotate the arrow when dropdown is open */
-.dropdown:hover .dropdown-icon {
-    transform: rotate(180deg); /* Rotate arrow */
-}
-/* --------------------------------------------------- Banner & Header ------------------------------------------------------*/
-#banner {
-    height: 100vh;
-    display: flex;
-    justify-content: flex-start; 
-    align-items: center; 
-    padding-left: 90px;
-    padding-top: 20px;  
-    position: relative;
-    overflow: hidden;
-    background-position: center;
-    background-size: cover;
-    background-image: url("https://github.com/rainvp/Personal-Profile-Webpage/blob/main/images/472690451_953965212896626_182944049874713246_n.jpg?raw=true");
-    min-height: 75%;
-}
-
-/* Optional Gradient Overlay for a softer look */
-#banner:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(241, 179, 121, 0.39), rgba(255, 255, 255, 0.5));
-}
-
-/* Banner content section */
-#banner-content {
-    animation: fadeInLeft 1.5s ease-out;
-    max-width: 50%; /* Restrict the content width */
-    z-index: 2; /* Ensures content is above the background */
-    position: relative;
-    text-align: left;
-}
-
-/* Header styling */
-#banner h1 {
-    font-size: 5em;
-    color:#fffaf5;
-    margin-bottom: 15px;
-    animation: fadeInLeft 1.5s ease-out;
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 2px; 
-    font-weight: bold;
-    line-height: 1.2;
-}
-
-/* Subheading styling */
-#banner h2 {
-    font-size: 1.8em;
-    margin-bottom: 30px;
-    animation: fadeInLeft 1.5s ease-out;
-    font-style: italic;
-    letter-spacing: 1px;
-    font-family: 'Arial', sans-serif;
-    line-height: 1.5;
-}
-
-/* Button styling */
-#banner .button {
-    background-color: #502917;
-    color: #fff;
-    margin-top: 15px;
-    padding: 22px;
-    text-decoration: none;
-    border-radius: 30px;
-    font-size: 20px;
-    transition: background-color 0.3s, transform 0.3s;
-    position: relative;
-    display: inline-block; 
-    text-align: center;
-}
-
-/* Add hover effect */
-#banner .button:hover {
-    background-color: #6a3d22;
-    transform: scale(1.05); 
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    #banner .button {
-        padding: 0.8em 1.5em; /* Adjust padding for smaller screens */
-        font-size: 1rem; /* Adjust font size */
-    }
-}
-
-@media (max-width: 480px) {
-    #banner .button {
-        padding: 0.6em 1em; /* Further adjust for very small screens */
-        font-size: 0.9rem;
-        margin: 0.5em;
-    }
-}
-
-
-/* Fade-in left animation */
-@keyframes fadeInLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-.w3-light-beige {
-    background-color: #f7e6d1 ;
-}
-.w3-leftbar {
-    border-left: 5px solid #cab291 !important; 
-}
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      margin: 40px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #4a3b2b;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
+  }
+  
+  .tag::before, .tag::after {
+      content: "";
+      flex: 1;
+      height: 3px;
+      background: linear-gradient(to right, #d4b59b, #502917);
+      margin: 0 15px;
+  }
+  
+  .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #f7e7d1;
+      color: #4a3b2b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px;
+      z-index: 1000;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar .logo img {
+      height: 65px;
+      width: auto;
+  }
+  
+  .navbar .nav-links {
+      display: flex;
+      align-items: center;
+  }
+  
+  .navbar a {
+      color: #4a3b2b;
+      font-size: 20px;
+      text-decoration: none;
+      padding: 10px 25px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .navbar a:hover {
+      background-color: #d4b59b;
+      color: #fff;
+      border-radius: 5px;
+  }
+  
+  .about-section {
+      padding: 50px;
+      text-align: center;
+      background-color: #f7e7d1;
+      margin: 20px 0;
+      border-radius: 10px;
+  }
   </style>
+  
+  <script>
+  export default {
+    name: "RainsCafe"
+  };
+  </script>
+  
