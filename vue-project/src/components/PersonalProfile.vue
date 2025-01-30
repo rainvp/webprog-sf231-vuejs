@@ -35,7 +35,7 @@
           </div>
         </div>
       </nav>
-      
+
 <!-- Banner Section -->
 <header id="banner">
   <div id="banner-content" class="row clearfix">
