@@ -59,7 +59,7 @@
         </div>
   
         <!-- About ME Container -->
-        <div class="w3-container" id="about">
+        <div class="w3-container" id="about-owner">
           <div class="w3-content" style="max-width: 1000px">
             <h5 class="tag">ABOUT THE OWNER</h5>
             <div class="w3-panel w3-leftbar w3-light-beige">
@@ -133,7 +133,7 @@
   };
   </script>
   
-  <style scoped>
+  <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 body, html {
