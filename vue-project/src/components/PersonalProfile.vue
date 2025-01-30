@@ -68,11 +68,13 @@
  <!-- About ME Container -->
 <div class="w3-container" id="about">
   <div class="w3-content" style="max-width: 1000px">
-    <h5 class="tag">ABOUT THE OWNER </h5>   
+    <h5 class="tag">ABOUT THE OWNER </h5>
+  </div>   
     <div class="w3-panel w3-leftbar w3-light-beige">
       <p><i>"The sun will rise and we will try again" *quote creds/smthn short i will say abt it*.</i></p>
       <p>Chef, Coffeeist and Owner: Rain Cel-Anne Sophia V. Presa</p> 
-    </div>  
+    </div>
+</div>  
   </template>
 
 <script>
