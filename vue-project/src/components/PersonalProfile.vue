@@ -47,9 +47,6 @@
       </div>
   </div><!--End of Row-->
 </header>
-
-<!-- Add a background color and large text to the whole page -->
-<div class="w3-sand w3-large"
   
 <!-- About The PAGE Container -->
 <div class="w3-container" id="about">
