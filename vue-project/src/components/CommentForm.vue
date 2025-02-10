@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Leave a Comment!</h2>
+    <h2>Leave a Comment</h2>
     <form @submit.prevent="submitComment">
       <div class="form-group">
         <label for="name">Name:</label>
@@ -20,15 +20,18 @@
 
 <script setup>
 import { ref } from 'vue';
-import { supabase } from '../lib/supabaseClient'
-
+import { createClient } from '@supabase/supabase-js';
 
 const name = ref('');
 const comment = ref('');
 const submissionStatus = ref(null);
 
 // Your Supabase URL and Key - IMPORTANT!
+const supabaseUrl = 'https://kbhnxlrhbxamkgwyqpjn.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtiaG54bHJoYnhhbWtnd3lxcGpuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzg0Njc3NzEsImV4cCI6MjA1NDA0Mzc3MX0.lCXlrIXQaw3BvkzR9SBLGuxXnDAIscdkzcUpnn0KR-8';
 const tableName = 'comments'; // Name of your Supabase table
+
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 async function submitComment() {
   submissionStatus.value = "Submitting...";
