@@ -1,41 +1,55 @@
 <template>
-  <h1>Comments</h1>
-  <ul>
-    <li v-for="comment in comments" :key="comment.id">{{ comment.name }} {{ comment.comment }}</li>
-  </ul>
+  <div>
+    <h1>Comments</h1>
+    <ul>
+      <li v-for="comment in comments" :key="comment.id">
+        <strong>{{ comment.name }}</strong>: {{ comment.comment }}
+      </li>
+    </ul>
+  </div>
 </template>
 
-<script></script>
-
-<style>
-  #app > div {
-    border: dashed black 1px;
-    display: inline-block;
-    margin: 10px;
-    padding: 10px;
-    background-color: lightyellow;
-  }
-</style>
-
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { supabase } from '../lib/supabaseClient'
 
 const comments = ref([])
 
 async function getComments() {
-const { data } = await supabase.from('comments').select()
-comments.value = data
+  try {
+    const { data, error } = await supabase.from('comments').select().order('created_at', { ascending: false })
+
+    if (error) {
+      console.error("❌ Error fetching comments:", error)
+      return
+    }
+
+    console.log("✅ Fetched comments:", data)
+    comments.value = data
+  } catch (err) {
+    console.error("❌ Unexpected error:", err)
+  }
 }
 
 onMounted(() => {
-getComments()
-})
+  getComments()
 
+  // Listen for real-time changes
+  const subscription = supabase
+    .channel('comments-realtime')
+    .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'comments' }, payload => {
+      console.log("🔄 New comment received:", payload.new)
+      comments.value.unshift(payload.new) // Add new comment to the list
+    })
+    .subscribe()
+
+  onUnmounted(() => {
+    supabase.removeChannel(subscription)
+  })
+})
 </script>
 
-
-<style>
+<style scoped>
 #app > div {
   border: dashed black 1px;
   display: inline-block;
